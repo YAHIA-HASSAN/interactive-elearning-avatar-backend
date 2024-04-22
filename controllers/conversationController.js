@@ -50,7 +50,7 @@ exports.addNewConversation = async (req, res) => {
 exports.updateConversationById = async (req, res) => {
   try {
     const updatedConversation = await Conversation.findByIdAndUpdate(
-      req.params.C_Id,
+      req.params.C_ID,
       req.body,
       { new: true } // Return the updated document
     );
@@ -67,7 +67,7 @@ exports.updateConversationById = async (req, res) => {
 exports.deleteConversationById = async (req, res) => {
   try {
     const deletedConversation = await Conversation.findByIdAndDelete(
-      req.params.C_Id
+      req.params.C_ID
     );
     if (!deletedConversation) {
       return res.status(404).json({ message: "Conversation not found" });
