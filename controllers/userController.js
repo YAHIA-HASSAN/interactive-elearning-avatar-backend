@@ -51,7 +51,7 @@ exports.updateUserByEmail = async (req, res) => {
   try {
     const userUpdated = await user.findOneAndUpdate(
       { U_Email: req.params.U_Email },
-      req.params,
+      req.body,
       { new: true } // Return the updated document
     );
     if (!userUpdated) {
