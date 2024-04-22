@@ -11,8 +11,8 @@ mongoose
   .then(() => {
     console.log("database connected...");
   })
-  .catch(() => {
-    console.log("error occured while DB connecting!");
+  .catch((err) => {
+    console.log("error occured while DB connecting! ==> ", err.message);
   });
 
 
