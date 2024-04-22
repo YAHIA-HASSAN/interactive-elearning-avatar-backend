@@ -23,7 +23,7 @@ exports.addNewUser = async (req, res) => {
 // Retrieve and return a single user from the database.
 exports.getUserByEmail = async (req, res) => {
   try {
-    const userFromDB = await user.findOne({ U_Email: req.body.U_Email });
+    const userFromDB = await user.findOne({ U_Email: req.params.U_Email });
     if (!userFromDB) {
       res.status(404).send("User not found");
     } else {
@@ -50,13 +50,13 @@ exports.getAllUsers = async (req, res) => {
 exports.updateUserByEmail = async (req, res) => {
   try {
     const userUpdated = await user.findOneAndUpdate(
-      { U_Email: req.body.U_Email },
-      req.body,
+      { U_Email: req.params.U_Email },
+      req.params,
       { new: true } // Return the updated document
     );
     if (!userUpdated) {
       return res.status(404).send({
-        message: "User not found with email " + req.body.U_Email,
+        message: "User not found with email " + req.params.U_Email,
       });
     }
     res.status(200).send(userUpdated);
@@ -69,10 +69,10 @@ exports.updateUserByEmail = async (req, res) => {
 // Delete a user with the specified Email in the request
 exports.deleteUserByEmail = async (req, res) => {
   try {
-    const userDeleted = await user.findOneAndRemove({ U_Email: req.body.U_Email });
+    const userDeleted = await user.findOneAndRemove({ U_Email: req.params.U_Email });
     if (!userDeleted) {
       return res.status(404).send({
-        message: "User not found with email " + req.body.U_Email,
+        message: "User not found with email " + req.params.U_Email,
       });
     }
     res.status(200).send(userDeleted);
