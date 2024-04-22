@@ -6,21 +6,23 @@ const userSchema = new mongoose.Schema({
   U_FirstName: {
     type: String,
     trim: true,
-    require: true,
     maxlength: 60,
     match: /^[A-Z]*/,
+    require: true,
   },
-  U_MidName: {
+  U_MiddleName: {
     type: String,
     trim: true,
     maxlength: 60,
     match: /^[A-Z]*/,
+    require: true,
   },
   U_LastName: {
     type: String,
     trim: true,
     maxlength: 60,
     match: /^[A-Z]*/,
+    require: true,
   },
   U_Type: {
     type: String,

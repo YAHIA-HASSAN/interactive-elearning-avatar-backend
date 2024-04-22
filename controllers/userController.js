@@ -3,7 +3,7 @@ const user = require("../models/userModel");
 // Create and Save a new User
 exports.addNewUser = async (req, res) => {
   try {
-    const userFromDB = await user.findOne({ U_Email: req.params.U_Email });
+    const userFromDB = await user.findOne({ U_Email: req.body.U_Email });
     if (!userFromDB) {
     const newUser = new user({
       U_FirstName: req.body.U_FirstName,
@@ -14,6 +14,7 @@ exports.addNewUser = async (req, res) => {
       U_Age: req.body.U_Age,
       U_Type: req.body.U_Type,
     });
+    console.log(newUser);
     const savedUser = await newUser.save();
     res.status(201).send(savedUser);
   } else {
