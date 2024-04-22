@@ -9,7 +9,7 @@ const messageValidationMiddleware = require('../middlewares/messageValidatorMidd
 router.post('/', messageValidationMiddleware, messageResponseMiddleware, messageController.addMessage);
 
 // Route to get all messages within a conversation by conversation ID
-router.get('/:conversationId/', messageController.getMessagesByConversationId);
+router.get('/all/:conversationId/', messageController.getMessagesByConversationId);
 
 // Route to get a specific message by ID (optional)
 router.get('/:messageId', messageController.getMessageById); // Replace ':messageId' with actual path parameter name if different
