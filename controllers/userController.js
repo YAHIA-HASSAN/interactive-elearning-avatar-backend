@@ -3,6 +3,8 @@ const user = require("../models/userModel");
 // Create and Save a new User
 exports.addNewUser = async (req, res) => {
   try {
+    const userFromDB = await user.findOne({ U_Email: req.params.U_Email });
+    if (!userFromDB) {
     const newUser = new user({
       U_FirstName: req.body.U_FirstName,
       U_MiddleName: req.body.U_MiddleName,
@@ -14,6 +16,9 @@ exports.addNewUser = async (req, res) => {
     });
     const savedUser = await newUser.save();
     res.status(201).send(savedUser);
+  } else {
+    res.status(403).send("User already exists");
+  }
   } catch (error) {
     console.error(error); // Log the error for debugging
     res.status(400).send({ error: error.message }); // Send a generic error message
@@ -69,7 +74,7 @@ exports.updateUserByEmail = async (req, res) => {
 // Delete a user with the specified Email in the request
 exports.deleteUserByEmail = async (req, res) => {
   try {
-    const userDeleted = await user.findOneAndRemove({ U_Email: req.params.U_Email });
+    const userDeleted = await user.deleteOne({ U_Email: req.params.U_Email });
     if (!userDeleted) {
       return res.status(404).send({
         message: "User not found with email " + req.params.U_Email,
