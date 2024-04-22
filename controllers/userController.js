@@ -38,15 +38,7 @@ exports.getUserByEmail = async (req, res) => {
 // Retrieve and return all users from the database.
 exports.getAllUsers = async (req, res) => {
   try {
-    const allUsers = await user.find().select({
-      U_FirstName: 1,
-      U_MiddleName: 1,
-      U_LastName: 1,
-      U_Type: 1,
-      U_Email: 1,
-      U_Age: 1,
-      _id: 0,
-    });
+    const allUsers = await user.find();
     res.status(200).send(allUsers);
   } catch (error) {
     console.error(error); // Log the error for debugging
