@@ -21,11 +21,11 @@ const port = process.env.PORT || 3000; // Use environment variable for port
 
 
 // Import routes and utility
-// const uploadRoute = require("./routes/uploadFile.js");
+const uploadRoute = require("./routes/uploadFile.js");
 const conversationRoute = require("./routes/conversation.js");
 const messageRoute = require("./routes/message.js");
 const userRoute = require("./routes/user.js");
-// const authRoute = require("./routes/auth.js");
+const authRoute = require("./routes/auth.js");
 
 // Middleware for parsing JSON request bodies
 app.use(cors());
