@@ -25,6 +25,7 @@ const uploadRoute = require("./routes/uploadFile.js");
 const conversationRoute = require("./routes/conversation.js");
 const messageRoute = require("./routes/message.js");
 const userRoute = require("./routes/user.js");
+const authRoute = require("./routes/auth.js");
 
 // Middleware for parsing JSON request bodies
 app.use(cors());
@@ -40,6 +41,7 @@ app.use('/upload', uploadRoute);
 app.use('/conversation', conversationRoute);
 app.use("/user",userRoute);
 app.use("/message", messageRoute);
+app.use("/login", authRoute);
 
 /** catch 404 and forward to error handler */
 app.use('*', (req, res) => {

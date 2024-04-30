@@ -38,7 +38,7 @@ exports.addMessage = async (req, res) => {
 // Function to get all messages within a conversation by conversation ID
 exports.getMessagesByConversationId = async (req, res) => {
   try {
-    const messages = await Message.find({ "C_ID._id": req.params.conversationId });
+    const messages = await Message.find({ "C_ID._id": req.body.C_ID });
     if (!messages) {
       return res.status(404).json({ message: 'No messages found for this conversation' });
     }
@@ -51,7 +51,7 @@ exports.getMessagesByConversationId = async (req, res) => {
 // Function to get a specific message by ID
 exports.getMessageById = async (req, res) => {
   try {
-    const message = await Message.findById(req.params.messageId);
+    const message = await Message.findById(req.body.M_ID);
     if (!message) {
       return res.status(404).json({ message: 'Message not found' });
     }
@@ -81,7 +81,7 @@ exports.getMessageById = async (req, res) => {
 // Function to delete a message by ID
 exports.deleteMessageById = async (req, res) => {
   try {
-    const deletedMessage = await Message.findByIdAndDelete(req.params.messageId);
+    const deletedMessage = await Message.findByIdAndDelete(req.body.M_ID);
     if (!deletedMessage) {
       return res.status(404).json({ message: 'Message not found' });
     }

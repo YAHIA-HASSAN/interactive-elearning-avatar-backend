@@ -4,13 +4,13 @@ const conversationController = require('../controllers/conversationController')
 const conversationValidator = require('../middlewares/conversationValidatorMiddleware')
 
 //Request All Conversations
-router.get('/', conversationController.getAllConversations)
+router.get('/all/', conversationController.getAllConversations)
 //Request One Conversation
-router.get('/:C_ID', conversationController.getConversationById)
+router.get('/', conversationController.getConversationById)
 //Request Add new Conversation
 router.post('/', conversationValidator, conversationController.addNewConversation)
 //Request Update Conversation
-router.put('/:C_ID', conversationValidator, conversationController.updateConversationById)
+router.put('/', conversationValidator, conversationController.updateConversationById)
 //Request Delete Conversation
-router.delete('/:C_ID', conversationController.deleteConversationById)
+router.delete('/', conversationController.deleteConversationById)
 module.exports = router

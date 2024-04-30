@@ -3,7 +3,7 @@ const Conversation = require("../models/conversationModel");
 // Function to get all conversations
 exports.getAllConversations = async (req, res) => {
   try {
-    const conversations = await Conversation.find().select({
+    const conversations = await Conversation.find({U_ID:req.body.U_ID}).select({
       _id: 1,
       C_Title: 1,
       C_Time: 1,
@@ -19,7 +19,7 @@ exports.getAllConversations = async (req, res) => {
 // Function to get a conversation by ID
 exports.getConversationById = async (req, res) => {
   try {
-    const conversation = await Conversation.findById(req.params.C_ID).select({
+    const conversation = await Conversation.findById(req.body.C_ID).select({
       _id: 1,
       C_Title: 1,
       C_Time: 1,
@@ -50,7 +50,7 @@ exports.addNewConversation = async (req, res) => {
 exports.updateConversationById = async (req, res) => {
   try {
     const updatedConversation = await Conversation.findByIdAndUpdate(
-      req.params.C_ID,
+      req.body.C_ID,
       req.body,
       { new: true } // Return the updated document
     );
@@ -67,7 +67,7 @@ exports.updateConversationById = async (req, res) => {
 exports.deleteConversationById = async (req, res) => {
   try {
     const deletedConversation = await Conversation.findByIdAndDelete(
-      req.params.C_ID
+      req.body.C_ID
     );
     if (!deletedConversation) {
       return res.status(404).json({ message: "Conversation not found" });
