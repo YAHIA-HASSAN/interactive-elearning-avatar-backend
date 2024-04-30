@@ -4,7 +4,7 @@ const userController = require('../controllers/userController')
 const userValidator = require('../middlewares/userValidatorMiddleware')
 
 //Request All users
-router.get('/', userController.getAllUsers)
+router.get('/all', userController.getAllUsers)
 //Request One user
 router.get('/', userController.getUserByEmail)
 //Request Add new user
