@@ -3,6 +3,9 @@ const ajv = new Ajv();
 const schema = {
   type: "object",
   properties: {
+    M_ID: {
+      type: ["string","null"],
+    },
     M_Time: {
       type: "string",
       //pattern matches the YYYY-MM-DDTHH:MM:SS.sssZ DateTime format
