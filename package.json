@@ -21,6 +21,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "festival": "^1.0.1",
+    "festivals-client": "^1.1.0",
     "googleapis": "^134.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.2",

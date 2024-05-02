@@ -1,7 +1,9 @@
-const say = require("say");
 const fs = require("fs");
 const path = require("path");
 const archiver = require("archiver"); // Import the archiver module
+const Say = require('say').Say
+const say = new Say('win32')
+ 
 
 // Directory where audio files will be saved
 const audioDirectory = path.join(__dirname, "mp3");
@@ -15,7 +17,12 @@ function generateAudio(text,index) {
   return new Promise((resolve, reject) => {
     const fileName = `audio_${Date.now()}-${index}.mp3`; // Unique file name
     const filePath = path.join(audioDirectory, fileName);
-
+    say.getInstalledVoices((err,voices)=>{
+        if(err){
+            console.log(err);
+        }
+        console.log(voices);
+    })
     say.export(text, "Microsoft Zira Desktop", 0.9, filePath, (err) => {
       if (err) {
         reject(err);
