@@ -40,7 +40,7 @@ exports.addMessage = async (req, res) => {
 
     res.sendFile(req.filePath, (err) => {
       if (err) {
-        rees.status(500).json({ error: "Error sending file" });
+        res.status(500).json({ error: "Error sending file" });
       }
       fs.unlink(req.filePath, (err) => {
         if (err) {
