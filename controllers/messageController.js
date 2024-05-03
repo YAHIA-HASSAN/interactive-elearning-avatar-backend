@@ -1,10 +1,9 @@
 const Message = require("../models/messageModel"); // Assuming your message model is in '../models'
-const fs = require("fs");
 
 // Function to create a new message within a conversation
 exports.addMessage = async (req, res) => {
   try {
-    // Validate user message data
+    // Validate user message data 
     const newUserMessage = new Message({
       M_Time: req.body.M_Time, // Timestamp of message
       C_ID: req.body.C_ID, // Conversation ID
@@ -14,6 +13,7 @@ exports.addMessage = async (req, res) => {
 
     // Validate avatar message data (optional)
     // Consider validating the structure of req.avatarMessage to ensure expected properties exist
+
     const newAvatarMessage = new Message({
       M_Time: req.avatarMessage.M_Time, // Timestamp of message
       C_ID: req.avatarMessage.C_ID, // Conversation ID
@@ -40,7 +40,7 @@ exports.addMessage = async (req, res) => {
 
     res.sendFile(req.filePath, (err) => {
       if (err) {
-        res.status(500).json({ error: "Error sending file" });
+        rees.status(500).json({ error: "Error sending file" });
       }
       fs.unlink(req.filePath, (err) => {
         if (err) {
@@ -50,18 +50,19 @@ exports.addMessage = async (req, res) => {
     });
   } catch (err) {
     console.error("Error saving messages:", err);
+    // Handle specific Mongoose errors (optional)
+    // You can check for specific Mongoose errors (e.g., validation errors, duplicate key errors) and provide more informative error messages to the client
     res.status(500).json({ error: "An error occurred while saving messages." });
   }
 };
+
 
 // Function to get all messages within a conversation by conversation ID
 exports.getMessagesByConversationId = async (req, res) => {
   try {
     const messages = await Message.find({ "C_ID._id": req.body.C_ID });
     if (!messages) {
-      return res
-        .status(404)
-        .json({ message: "No messages found for this conversation" });
+      return res.status(404).json({ message: 'No messages found for this conversation' });
     }
     res.json(messages);
   } catch (err) {
@@ -74,7 +75,7 @@ exports.getMessageById = async (req, res) => {
   try {
     const message = await Message.findById(req.body.M_ID);
     if (!message) {
-      return res.status(404).json({ message: "Message not found" });
+      return res.status(404).json({ message: 'Message not found' });
     }
     res.json(message);
   } catch (err) {
@@ -104,10 +105,12 @@ exports.deleteMessageById = async (req, res) => {
   try {
     const deletedMessage = await Message.findByIdAndDelete(req.body.M_ID);
     if (!deletedMessage) {
-      return res.status(404).json({ message: "Message not found" });
+      return res.status(404).json({ message: 'Message not found' });
     }
-    res.json({ message: "Message deleted" });
+    res.json({ message: 'Message deleted' });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
+
+

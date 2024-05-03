@@ -16,7 +16,7 @@ const messageSchema = new mongoose.Schema({
     required: true,
   },
   M_Text: {
-    type: Array,
+    type: String,
     required: true,
     trim: true,
     minlength: 1,
@@ -27,7 +27,7 @@ const messageSchema = new mongoose.Schema({
     trim: true,
   },
   M_Action:{
-    type: Array,
+    type: String,
     trim: true,
   }
 });
