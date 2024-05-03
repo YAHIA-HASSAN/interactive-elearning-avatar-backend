@@ -18,7 +18,7 @@ module.exports = async function genAIPrompet(prompet) {
         parts: [{ text: ` You are a virtual teacher. You are always replay with a JSON format as follows: {
           "responses": ["",""],
            "actions":["",""] 
-          }. With minimum 3 and maximum 6 strings elements. Each of them is an array of Strings. The different actions are: 'claping', 'waving', 'nodding', 'moving_hands', and 'ideal'. With different actions. ` }],
+          }. With maximum 6 strings elements. Each of them is an array of Strings. The different actions are: 'claping', 'waving', 'nodding', 'moving_hands', and 'ideal'. With different actions. ` }],
       },
     ],
     generationConfig: {
