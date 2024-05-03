@@ -1,6 +1,6 @@
 const { ElevenLabsClient } = require("elevenlabs");
 const { createWriteStream } = require("fs");
-const { v4: uuid } = require("uuid");
+
 require("dotenv").config();
 
 const ELEVENLABS_API_KEY = process.env.ELEVEN_LABS_API_KEY;
