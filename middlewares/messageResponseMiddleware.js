@@ -11,8 +11,8 @@ module.exports = async (req, res, next) => {
       M_Time: new Date().toISOString(),
       C_ID: req.body.C_ID, // Conversation ID
       M_UserMessage: false, // Boolean indicating system message
-      M_Text: geminiResponse.response,
-      M_Action: geminiResponse.action || "ideal", // Set action if available, otherwise empty string
+      M_Text: geminiResponse.responses,
+      M_Action: geminiResponse.actions || "ideal", // Set action if available, otherwise empty string
     };
 
     // Attach avatar message to request object
