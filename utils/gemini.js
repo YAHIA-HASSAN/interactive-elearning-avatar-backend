@@ -30,4 +30,7 @@ module.exports = async function genAIPrompet(prompet) {
   const response = result.response;
   const text = response.text();
   return JSON.parse(text);
-};
+}catch(err){
+  console.log(err);
+}
+}
