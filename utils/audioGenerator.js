@@ -1,8 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const archiver = require("archiver"); // Import the archiver module
-const gTTS = require("gtts");
-
+const ElevenLabs = require("./eleven_labs").createAudioFileFromText;
 // Directory where audio files will be saved
 const audioDirectory = path.join(__dirname, "mp3");
 
@@ -13,18 +12,10 @@ if (!fs.existsSync(audioDirectory)) {
 
 function generateAudio(text, index) {
   return new Promise((resolve, reject) => {
-    const fileName = `audio_${Date.now()}-${index}.mp3`; // Unique file name
-    const outputPath = path.join(audioDirectory, fileName);
-
-    var gtts = new gTTS(text, "en");
-    gtts.save(outputPath, function (err) {
-      if (err) {
-        console.error(err);
-        reject(err); // Reject the promise if there's an error
-      } else {
-        resolve(outputPath); // Resolve the promise with the output path
-      }
-    });
+    const fileName = `audio_${Date.now()}-${index}.mp3`; 
+    ElevenLabs(text, fileName)
+      .then((filePath) => resolve(filePath)) // Resolve with the file path
+      .catch((error) => reject(error));
   });
 }
 

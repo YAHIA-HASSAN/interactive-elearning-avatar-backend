@@ -19,6 +19,8 @@
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
+    "elevenlabs": "^0.4.1",
+    "elevenlabs-node": "^2.0.3",
     "express": "^4.19.2",
     "googleapis": "^134.0.0",
     "gtts": "^0.2.1",
