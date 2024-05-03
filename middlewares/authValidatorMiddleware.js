@@ -1,4 +1,4 @@
-const validator = require("../utils/userValidator");
+const validator = require("../utils/authValidator");
 
 module.exports = (req, res, next) => {
   let valid = validator(req.body);
@@ -6,6 +6,6 @@ module.exports = (req, res, next) => {
     req.valid = 1;
     next();
   } else {
-    res.status(200).send("Wrong Data Entered");
+    res.status(200).send("Wrong Email or Password");
   }
 };

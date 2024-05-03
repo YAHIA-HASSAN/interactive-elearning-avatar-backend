@@ -6,7 +6,6 @@ module.exports = (req, res, next) => {
     req.valid = 1;
     next();
   } else {
-
-    res.status(403).send("Forbidden command");
+    res.status(200).send("Wrong Data Entered");
   }
 };
