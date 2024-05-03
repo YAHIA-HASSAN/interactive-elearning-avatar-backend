@@ -4,9 +4,8 @@ require("dotenv").config();
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 module.exports = async function genAIPrompet(prompet) {
-  try {
-    // For dialog language tasks (like chat), use the gemini-pro model
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  // For dialog language tasks (like chat), use the gemini-pro model
+  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
   const chat = model.startChat({
     history: [
