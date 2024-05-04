@@ -6,6 +6,6 @@ module.exports = (req, res, next) => {
     req.valid = 1;
     next();
   } else {
-    res.status(200).send("Wrong Email or Password");
+    res.status(200).send({"status":"Wrong Email or Password"});
   }
 };
