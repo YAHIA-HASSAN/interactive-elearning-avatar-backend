@@ -7,7 +7,7 @@ const pdfFileSchema = new mongoose.Schema({
     type:String,
     required:true
   },
-  U_ID:{
+  C_ID:{
     type:Object,
     required:true,
   }

@@ -41,7 +41,7 @@ const schema = {
       maximum: 100,
     },
   },
-  required: ["U_FirstName", "U_LastName", "U_Email", "U_Password", "U_Type", "U_Age"],
+  // required: ["U_FirstName", "U_LastName", "U_Email", "U_Password", "U_Type", "U_Age"],
   additionalProperties: false,
 }
 module.exports = ajv.compile(schema);

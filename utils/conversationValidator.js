@@ -21,7 +21,7 @@ const schema = {
       "type": ["object", "null"],
     }
   },
-  "required": ["C_Time", "C_Title", "U_ID", "F_ID"],
+  // "required": ["C_Time", "C_Title", "U_ID", "F_ID"],
   "additionalProperties": false,
 };
 

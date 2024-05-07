@@ -25,7 +25,7 @@ const schema = {
       type: "string",
     }
   },
-  required: ["M_Time", "M_UserMessage", "M_Text", "C_ID"],
+  // required: ["M_Time", "M_UserMessage", "M_Text", "C_ID"],
   additionalProperties: false,
 };
 

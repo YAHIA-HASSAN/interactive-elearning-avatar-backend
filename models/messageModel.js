@@ -23,7 +23,7 @@ const messageSchema = new mongoose.Schema({
   },
   C_ID: {
     type: Object,
-    required: true,
+    // required: true,
     trim: true,
   },
   M_Action:{
