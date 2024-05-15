@@ -19,13 +19,13 @@ const schema = {
       minLength: 1,
     },
     C_ID: {
-      type: "object",
+      type: "string",
     },
     M_Action: {
       type: "string",
     }
   },
-  // required: ["M_Time", "M_UserMessage", "M_Text", "C_ID"],
+  required: ["M_Time", "M_UserMessage", "M_Text", "C_ID"],
   additionalProperties: false,
 };
 

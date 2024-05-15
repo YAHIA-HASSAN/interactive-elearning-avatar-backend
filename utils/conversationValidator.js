@@ -15,13 +15,13 @@ const schema = {
       "type": "string",
     },
     "U_ID": {
-      "type": "object",
+      "type": "string",
     },
     "F_ID": {
-      "type": ["object", "null"],
+      "type": ["string", "null"],
     }
   },
-  // "required": ["C_Time", "C_Title", "U_ID", "F_ID"],
+  "required": ["C_Time", "C_Title", "U_ID", "F_ID"],
   "additionalProperties": false,
 };
 

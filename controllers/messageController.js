@@ -38,7 +38,7 @@ exports.addMessage = async (req, res) => {
 // Function to get all messages within a conversation by conversation ID
 exports.getMessagesByConversationId = async (req, res) => {
   try {
-    const messages = await Message.find({ "C_ID._id": req.body.C_ID });
+    const messages = await Message.find({ "C_ID": req.body.C_ID });
     if (!messages) {
       return res.status(404).json({ message: 'No messages found for this conversation' });
     }

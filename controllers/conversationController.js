@@ -3,7 +3,7 @@ const Conversation = require("../models/conversationModel");
 // Function to get all conversations
 exports.getAllConversations = async (req, res) => {
   try {
-    const conversations = await Conversation.find({"U_ID.$oid":req.body.U_ID}).select({
+    const conversations = await Conversation.find({"U_ID":req.body.U_ID}).select({
       _id: 1,
       C_Title: 1,
       C_Time: 1,
