@@ -17,7 +17,8 @@ router.post("/", validator,async (req, res) => {
   const token = jwt.sign({ U_ID: user._id }, process.env.TOKEN_SECRET);
   res.header("x-auth-token", token);
   // Send res
-  res.status(200).send({"status":"login-successfuly"})
+  user.status = "login-successfuly";
+  res.status(200).send(user)
 
 });
 
