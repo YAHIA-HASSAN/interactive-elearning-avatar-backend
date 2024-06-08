@@ -25,7 +25,7 @@ exports.addMessage = async (req, res) => {
     await Promise.all([newUserMessage.save(), newAvatarMessage.save()]);
     const savedMessages = [newUserMessage, newAvatarMessage]; // Assuming you want both saved messages in the response
 
-    res.status(201).json(savedMessages);
+    res.status(201).json(newAvatarMessage);
   } catch (err) {
     console.error("Error saving messages:", err);
     // Handle specific Mongoose errors (optional)
