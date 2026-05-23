@@ -297,6 +297,7 @@ flutter run
 | 7 | **Mostafa Abdulraziq Mohammed** | 📱 Flutter Mobile App Development | mostafaabdelrazrk@gmail.com |
  
 <br/>
+
 ### 🎓 Supervision
  
 | Name | Title | Department | Email |
