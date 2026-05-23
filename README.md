@@ -285,20 +285,27 @@ flutter run
 ---
 
 ## 👥 Team
-
-| Name | Role |
-|---|---|
-| **Yahia Hassan** | 🔧 Backend Development (Node.js/Express.js) · System Architecture · ERD |
-| **Fatma Mansour** | 🤖 AI Models Integration · System Requirements · Work Planning |
-| **Aliaa Salah** | 📊 Data Analysis · Datasets Gathering · Feasibility Study · Functional Requirements |
-| **Nermin Mohammed** | 🎨 UI/UX Design · System Architecture · Domain Model |
-| **Yara Abdelanser** | 🔒 Security Implementation · Use Cases · Sequence Diagrams · Risk Management |
-| **Moaz Ragab** | 🧑‍🎨 Avatar Modeling & Creation · Business Model · Database Script |
-| **Mostafa Abdelraziq** | 📱 Flutter Mobile App Development |
-
-> 🎓 **Minia University** — Faculty of Computers & Information, Computer Science
-> Supervised by **Dr. Eman Mamdouh** & **Eng. Amir Mustafa**
-
+ 
+| # | Name | Role | Email |
+|---|---|---|---|
+| 1 | **Yahia Hassan Ahmed** | 🔧 Backend Development (Node.js/Express.js) · System Architecture · ERD | yahia.hassan152@gmail.com |
+| 2 | **Fatema Hossam Mansour** | 🤖 AI Models Integration · System Requirements · Work Planning | fatmamansour989@gmail.com |
+| 3 | **Aliaa Salah Hassan** | 📊 Data Analysis · Datasets Gathering · Feasibility Study · Functional Requirements | aliaa.hasan334@gmail.com |
+| 4 | **Nermeen Mohammed Mostafa** | 🎨 UI/UX Design · System Architecture · Domain Model | nermenahmsd1234@gmail.com |
+| 5 | **Yara AbdElnnasir Hifny** | 🔒 Security Implementation · Use Cases · Sequence Diagrams · Risk Management | yaranasser2022@gmail.com |
+| 6 | **Moaaz Ragab Abdulsalam** | 🧑‍🎨 Avatar Modeling & Creation · Business Model · Database Script | moaazsalama30@gmail.com |
+| 7 | **Mostafa Abdulraziq Mohammed** | 📱 Flutter Mobile App Development | mostafaabdelrazrk@gmail.com |
+ 
+<br/>
+### 🎓 Supervision
+ 
+| Name | Title | Department | Email |
+|---|---|---|---|
+| **Dr. Eman Mamdouh Younes** | Assistant Professor | Information Systems Dept. | eman.younas@mu.edu.eg |
+| **Eng. Amir Mostafa** | Teaching Assistant | Computer Science Dept. | amir_mostafa@mu.edu.eg |
+ 
+> 🏛️ **Minia University** — Faculty of Computers & Information · Egypt · 2024
+ 
 ---
 
 ## 📊 Economic Highlights
