@@ -115,6 +115,10 @@ ELLIE uses **3 CNN models** trained on a Kaggle dataset of **84,898 images** to 
 | `sequential` | 😮 Yawn Detection | 322+ videos, in-car camera | **98.7%** |
 | `sequential_3` | 👀 Gaze Direction | Multi-sensor eye images | **83.5%** |
 
+Repos:
+- https://github.com/FatMAnsour/Eye-Tracker
+- https://github.com/FatMAnsour/graduation-project
+
 **Model Architecture (all 3 models):**
 ```
 Conv2D (32 filters, 3×3) → Flatten → Dense (128) → Dense (2)
